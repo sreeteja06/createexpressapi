@@ -19,39 +19,39 @@ const createProject = async (projectName) => {
       console.log(`stderr: ${stderr}`);
       process.exit();
     }
-  });
-  exec(`git init`, (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`);
-      process.exit();
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`);
-      process.exit();
-    }
-    console.log(`stdout: ${stdout}`);
-  });
-  exec(`git add .`, (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`);
-      process.exit();
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`);
-      process.exit();
-    }
-    console.log(`stdout: ${stdout}`);
-  });
-  exec(`git commit -m "js expressapi boilerplate"`, (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`);
-      process.exit();
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`);
-      process.exit();
-    }
-    console.log(`stdout: ${stdout}`);
+    exec(`git init`, (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        process.exit();
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        process.exit();
+      }
+      console.log(`stdout: ${stdout}`);
+      exec(`git add .`, (error, stdout, stderr) => {
+        if (error) {
+          console.log(`error: ${error.message}`);
+          process.exit();
+        }
+        if (stderr) {
+          console.log(`stderr: ${stderr}`);
+          process.exit();
+        }
+        console.log(`stdout: ${stdout}`);
+        exec(`git commit -m "js expressapi boilerplate"`, (error, stdout, stderr) => {
+          if (error) {
+            console.log(`error: ${error.message}`);
+            process.exit();
+          }
+          if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            process.exit();
+          }
+          console.log(`stdout: ${stdout}`);
+        });
+      });
+    });
   });
 };
 
